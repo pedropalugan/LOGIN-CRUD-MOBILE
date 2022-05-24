@@ -10,9 +10,6 @@ function Home({ navigation }) {
 
       <View style={styles.viewConta}>
             <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('GetData')}><Text style={styles.txt}>Ver lista</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('PostData')}><Text style={styles.txt}>Adicionar dado</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('DeleteData')}><Text style={styles.txt}>Deletar dado</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('PutData')}><Text style={styles.txt}>Editar dado</Text></TouchableOpacity>
             <TouchableOpacity style={styles.btnBack} onPress={() => navigation.navigate('Login')}><Text style={styles.txt}>Voltar</Text></TouchableOpacity>
         </View>
       <StatusBar style="auto" />

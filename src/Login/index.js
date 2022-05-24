@@ -15,7 +15,7 @@ function Login({ navigation }) {
 
 
     function validacao(){
-        Axios.post('http://localhost:3001/login', {
+        Axios.post('http://localhost:3000/login', {
             email: login,
             password: senha,
         }).then((response) => {

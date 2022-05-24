@@ -13,15 +13,17 @@ export default function GetData(){
     
 
     function select(){
-        Axios.get('http://localhost:3001/pegar')
+        lista = []
+        Axios.get('http://localhost:3000/pegar')
         .then((response) => response['data'])
-        .then((end) => {
-            for(let i = 0; i < end.length; i++){
-                lista.push(end[i]['email'])
-                console.log(lista)
-                setUse(lista[i])
-            }
-        })
+          .then(data => {
+          for(let i = 0; i < data.length; i++){
+            lista.push(data[i]['nome'])
+            console.log(lista)
+            setUse(lista[i])
+          } }
+          )
+
     }
 
 

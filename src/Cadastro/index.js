@@ -12,7 +12,7 @@ function Cadastro({ navigation }) {
 
     function cadastrar(){
       setMessage('')
-      Axios.post('http://localhost:3001/register', {
+      Axios.post('http://localhost:3000/register', {
         email: login,
         password: senha,
       }).then((response) =>{
