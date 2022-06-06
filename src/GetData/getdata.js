@@ -17,7 +17,7 @@ export default function GetData(){
     function select(){
         listaName = []
         listaValue =[]
-        Axios.get('http://localhost:3000/pegar')
+        Axios.get('http://localhost:3001/pegar')
         .then((response) => response['data'])
           .then(data => {
           for(let i = 0; i < data.length; i++){
@@ -37,12 +37,16 @@ export default function GetData(){
         <View style={styles.mainContent}>
             <TouchableOpacity onPress={select} style={styles.btn}><Text style={styles.btnTxt}>Mostrar Dados</Text></TouchableOpacity>
             <View style={styles.mapContainer}>
-                {listaName.map(teste => {
-                    return <Text key={teste} style={styles.txt}>{teste}</Text>
-                })}
-                {listaValue.map(price =>{
-                    return <Text key={price} style={styles.txt}>{'R$' + price}</Text>
-                })}
+                <View style={styles.nomeContainer}>
+                    {listaName.map(teste => {
+                        return <Text key={teste} style={styles.txt}>{teste}</Text>
+                    })}
+                </View>
+                <View style={styles.precoContainer}>
+                    {listaValue.map(price =>{
+                        return <Text key={price} style={styles.txt}>{'R$' + price}</Text>
+                    })}
+                </View>
             </View>
         </View>
     );
@@ -77,9 +81,19 @@ const  styles = StyleSheet.create({
         marginTop: 17,
     },  
     mapContainer:{
-        width: '50vw',
+        width: '75vw',
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+    },
+    nomeContainer:{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '2%',
+    },
+    precoContainer:{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '2%',
     },
 })
